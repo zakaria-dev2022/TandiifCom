@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Wash Dashboard</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../resources/css/app.css">
+    {{-- <link rel="stylesheet" href="../resources/css/app.css"> --}}
+    <link rel="stylesheet" href="../resources/css/dash.css">
        
 </head>
 <body>
     <div class="d-flex">
         <div class="sidebar">
             {{-- <h2 class="p-4 ">Car Wash</h2> --}}
-              <img class="im" src="../resources/img/1.png" alt="">
+              <img class="im" src="../resources/img/logoCarWash.png" alt="">
             <div class="liens">
             <a href="#">Dashboard</a>
             <a href="#">UI Elements</a>
