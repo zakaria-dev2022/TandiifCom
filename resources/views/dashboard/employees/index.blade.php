@@ -3,6 +3,7 @@
     Employees
 @endsection
 @section('content')
+<a href="{{ route('employees.create')}}" class="btn btn-success btn-lg my-3">Ajouter </a>
 <table class="table">
     <thead>
       <tr>

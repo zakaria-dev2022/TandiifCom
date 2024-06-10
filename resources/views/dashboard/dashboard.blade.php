@@ -2,6 +2,9 @@
 @section('title')
     Dashboard
 @endsection
+@section('logo')
+<img class="im" src="../resources/img/logoCarWash.png" alt="">
+@endsection
 @section('content')
     {{-- <div class="container mt-4"> --}}
         <div class="row">

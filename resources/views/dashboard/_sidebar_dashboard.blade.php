@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="../resources/css/app.css"> --}}
     <link rel="stylesheet" href="../resources/css/dash.css">
+    @yield('link')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
        
 </head>
@@ -14,17 +14,21 @@
     <div class="d-flex">
         <div class="sidebar">
             {{-- <h2 class="p-4 ">Car Wash</h2> --}}
-              <img class="im" src="../resources/img/logoCarWash.png" alt="">
+            @hasSection ('logo')
+                @yield('logo')
+            @else
+            <img class="im" src="../resources/img/logoCarWash.png" alt="">  
+            @endif
             <div class="liens">
                 <div class="nav-links">
                     <a href="{{url('dashboard')}}" class="dashboard">Dashboard</a>
-                    <a href="{{url('dashboard.employees')}}" class="employees">Employees</a>
-                    <a href="{{url('dashboard.clients')}}" class="clients">Clients</a>
-                    <a href="{{url('dashboard.reservations')}}" class="reservations">Reservations</a>
-                    <a href="{{url('dashboard.tachs')}}" class="tasks">Taches</a>
-                    <a href="{{url('dashboard.services')}}" class="services">Services</a>
-                    <a href="{{url('dashboard.commentaires')}}" class="commentaire">Commentaire</a>
-                    <a href="{{url('dashboard.parametre')}}" class="parametre">Paramétre</a>
+                    <a href="{{url('employees')}}" class="employees">Employees</a>
+                    <a href="{{url('clients')}}" class="clients">Clients</a>
+                    <a href="{{url('reservations')}}" class="reservations">Reservations</a>
+                    <a href="{{url('tachs')}}" class="tasks">Taches</a>
+                    <a href="{{url('services')}}" class="services">Services</a>
+                    <a href="{{url('commentaires')}}" class="commentaire">Commentaire</a>
+                    <a href="{{url('parametre')}}" class="parametre">Paramétre</a>
                 </div>
             {{-- <a href="#">Dashboard</a>
             <a href="#">Employees</a>
