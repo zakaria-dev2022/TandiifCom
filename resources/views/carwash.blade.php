@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CarWash</title>
+    <title>RiberyAutoClean </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../resources/css/style.css"> --}}
 
     <!-- Favicon -->
-    {{-- <link href="../resources/img/favicon.ico" rel="icon"> --}}
+    <link href="../resources/img/logoCarWash.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,7 +77,9 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>CarWash</h2>
+            <h2 class="m-0 text-primary">
+                {{-- <i class="fa fa-car me-3"> --}}
+                    </i>RiberyAutoClean </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -98,7 +100,7 @@
                 </div> -->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Rejoignez-nous<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -114,7 +116,7 @@
                         <div class="container">
                             <div class="row align-items-center justify-content-center justify-content-lg-start">
                                 <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Car Wash //</h6>
+                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Ribery-Auto-Clean  //</h6>
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Services de Lavage de Voiture Mobiles de Confiance</h1>
                                     <a href="#contact" class="btn btn-primary py-3 px-5 animated slideInDown">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
@@ -131,7 +133,7 @@
                         <div class="container">
                             <div class="row align-items-center justify-content-center justify-content-lg-start">
                                 <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Car Wash //</h6>
+                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Ribery-Auto-Clean  //</h6>
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Lavage de Voiture Expert Livré à Votre Porte</h1>
                                     <a href="#contact" class="btn btn-primary py-3 px-5 animated slideInDown">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
@@ -213,8 +215,8 @@
                 </div>
                 <div class="col-lg-6">
                     <h6 class="text-primary text-uppercase">// à Propos //</h6>
-                    <h3 class="mb-4"><span class="text-primary">CarWash</span> Est Le Meilleur Endroit Pour Vos Soins Automobiles</h3>
-                    <p class="mb-4">Bienvenue chez <span class="text-primary fw-bold">CarWash</span> , votre solution de lavage de voiture à domicile de confiance. Notre équipe est passionnée par la propreté et l'entretien des véhicules, et nous sommes déterminés à offrir un service exceptionnel à nos clients. Avec <span class="text-primary fw-bold">CarWash</span> , vous pouvez dire adieu aux longues attentes dans les files d'attente des stations de lavage et au stress des déplacements. Nous avons conçu notre application pour rendre le processus de lavage de voiture aussi simple et pratique que possible. Que vous soyez chez vous, au travail ou ailleurs, notre équipe professionnelle viendra à vous, équipée de tout le nécessaire pour laisser votre véhicule étincelant. Faites confiance à <span class="text-primary fw-bold">CarWash</span>  pour un lavage de voiture de qualité supérieure, sans tracas ni compromis.</p>
+                    <h3 class="mb-4"><span class="text-primary">RiberyAutoClean </span> Est Le Meilleur Endroit Pour Vos Soins Automobiles</h3>
+                    <p class="mb-4">Bienvenue chez <span class="text-primary fw-bold">RiberyAutoClean </span> , votre solution de lavage de voiture à domicile de confiance. Notre équipe est passionnée par la propreté et l'entretien des véhicules, et nous sommes déterminés à offrir un service exceptionnel à nos clients. Avec <span class="text-primary fw-bold">RiberyAutoClean </span> , vous pouvez dire adieu aux longues attentes dans les files d'attente des stations de lavage et au stress des déplacements. Nous avons conçu notre application pour rendre le processus de lavage de voiture aussi simple et pratique que possible. Que vous soyez chez vous, au travail ou ailleurs, notre équipe professionnelle viendra à vous, équipée de tout le nécessaire pour laisser votre véhicule étincelant. Faites confiance à <span class="text-primary fw-bold">RiberyAutoClean </span>  pour un lavage de voiture de qualité supérieure, sans tracas ni compromis.</p>
                     <div class="row g-4 mb-3 pb-3">
                         <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
                             <div class="d-flex">
@@ -406,7 +408,7 @@
                 <div class="col-lg-6 py-5">
                     <div class="py-5">
                         <h1 class="text-white mb-4">Contactez-nous pour un Service Impeccable</h1>
-                        <p class="text-white mb-0">Vous avez des questions ou souhaitez prendre rendez-vous pour un lavage complet de votre véhicule ? N'hésitez pas à nous contacter ! Notre équipe dévouée est prête à vous assister et à répondre à toutes vos demandes. Vous pouvez nous joindre par téléphone au 0625683588, par email à CarWash@gmail.com, ou en remplissant le formulaire de contact ci-dessous. Nous nous engageons à vous offrir un service client de qualité et à faire de votre expérience avec nous un moment agréable et sans tracas.</p>
+                        <p class="text-white mb-0">Vous avez des questions ou souhaitez prendre rendez-vous pour un lavage complet de votre véhicule ? N'hésitez pas à nous contacter ! Notre équipe dévouée est prête à vous assister et à répondre à toutes vos demandes. Vous pouvez nous joindre par téléphone au 0625683588, par email à RiberyAutoClean @gmail.com, ou en remplissant le formulaire de contact ci-dessous. Nous nous engageons à vous offrir un service client de qualité et à faire de votre expérience avec nous un moment agréable et sans tracas.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -609,7 +611,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
-                        <h1 class="text-white mb-4">Book For A Service</h1>
+                        <h1 class="text-white mb-4">Commentaire</h1>
                         <form>
                             <div class="row g-3">
                                 {{-- <div class="col-12 col-sm-6">
@@ -708,7 +710,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">CarWash</a>
+                        &copy; <a class="border-bottom" href="#">RiberyAutoClean </a>
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         Designed By <a class="border-bottom" href="">Zakaria Rebibi</a>
