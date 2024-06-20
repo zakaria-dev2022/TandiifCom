@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('taches', function (Blueprint $table) {
+        Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('reservation_id')->constrained();
-            $table->foreignId('employee_id')->constrained();
-            $table->string('code_secret')->nullable();
-            $table->string('status');
+            $table->foreignId('client_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('service_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->date('date_reservation');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tachs');
+        Schema::dropIfExists('reservations');
     }
 };

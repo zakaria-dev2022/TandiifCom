@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\employee;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -11,7 +12,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('dashboard.employees.index');
+        $employees = employee::all();
+        return view('dashboard.employees.index',compact('employees'));
     }
 
     /**

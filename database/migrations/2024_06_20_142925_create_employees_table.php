@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('type_permis');
             $table->string('copy_cin');
             $table->string('copy_permis');
-            $table->string('voiture_id');
             $table->string('photo')->nullable();
             $table->timestamps();
         });

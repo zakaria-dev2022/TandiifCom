@@ -22,5 +22,6 @@ class commentaire extends Model
    public function client(): BelongsTo
    {
        return $this->belongsTo(client::class);
+       
    }
 }

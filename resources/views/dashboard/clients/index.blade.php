@@ -3,7 +3,7 @@
     Clients
 @endsection
 @section('content')
-<div class="container my-4">
+<div class="container-fluid my-4">
             
     <a href="{{ route('clients.create')}}" class="btn btn-success btn-lg my-3">Ajouter </a>
     <table class="table text-center">
@@ -22,18 +22,28 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($clients as $client)
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <th scope="row">{{$client->id}}</th>
+            <td>{{$client->nom}}</td>
+            <td>{{$client->prenom}}</td>
+            <td>{{$client->cin}}</td>
+            <td>{{$client->tel}}</td>
+            <td>{{$client->adresse}}</td>
+            <td>{{$client->Matricule_Voiture}}</td>
+            <td>{{$client->ville}}</td>
+            <td>{{$client->gmail}}</td>
+            <td>
+                <a href="" class="btn btn-sm btn-info">C</a>
+                <a href="" class="btn btn-sm btn-warning">M</a>
+                <form class="d-inline" action="" method="post">
+                @method('DELETE')
+                @csrf
+                <button  class="btn btn-sm btn-danger">S</button>
+                </form>
+            </td>
           </tr>
+          @endforeach
         </tbody>
       </table>
 </div>

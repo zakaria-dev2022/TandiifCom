@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parametres', function (Blueprint $table) {
+        Schema::create('taches', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('reservation_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('employee_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('code_secret')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parametres');
+        Schema::dropIfExists('taches');
     }
 };

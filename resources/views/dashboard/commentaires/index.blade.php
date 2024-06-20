@@ -15,12 +15,22 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($commentaires as $commentaire)
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{$commentaire->id}}</th>
+            <td>{{$commentaire->client->gmail}}</td>
+            <td>{{$commentaire->message}}</td>
+            <td>
+              <a href="" class="btn btn-sm btn-info">C</a>
+                <a href="" class="btn btn-sm btn-warning">M</a>
+                <form class="d-inline" action="" method="post">
+                @method('DELETE')
+                @csrf
+                <button  class="btn btn-sm btn-danger">S</button>
+                </form>
+            </td>
           </tr>
+          @endforeach
         </tbody>
       </table>
 </div>

@@ -27,23 +27,26 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($employees as $employee)
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <th scope="row">{{$employee->id}}</th>
+            <td>{{$employee->nom}}</td>
+            <td>{{$employee->prenom}}</td>
+            <td>{{$employee->cin}}</td>
+            <td>{{$employee->tel}}</td>
+            <td>{{$employee->adresse}}</td>
+            <td>{{$employee->ville}}</td>
+            <td>{{$employee->gmail}}</td>
+            <td>{{$employee->date_naissance}}</td>
+            <td>{{$employee->type_permis}}</td>
+            <td>{{$employee->copy_cin}}</td>
+            <td>{{$employee->copy_permis}}</td>
+            <td>{{$employee->voiture->marque}}</td>
+            <td>{{$employee->id}}</td>
+            <td>{{$employee->id}}</td>
           </tr>
+          @endforeach
+          
         </tbody>
       </table>
 </div>
