@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>RiberyAutoClean /@yield('title')</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../resources/css/dash.css">
+    <link href="../resources/img/logoCarWash.png" rel="icon">
     @yield('link')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
        
@@ -49,10 +50,8 @@
                 <div>
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Report</button>
                 </div>
-            </nav>
-            <div class="container mt-4">
-        @yield('content')
-        </div>
+            </nav>        
+                @yield('content')
         </div>
     </div>
 
