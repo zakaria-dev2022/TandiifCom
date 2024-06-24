@@ -13,7 +13,8 @@ class service extends Model
     protected $fillable=[
     'type',
     'prix',
-    'description'];
+    'description',
+    'photo'];
 
     /**
      * Get all of the reservations for the service

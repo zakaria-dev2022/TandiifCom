@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\service;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -11,7 +12,9 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        return view('dashboard.services.index');
+        $services = service::all();
+        return view('dashboard.services.index',compact('services'));
+        // return view('dashboard.services.index');
     }
 
     /**
@@ -19,7 +22,9 @@ class ServicesController extends Controller
      */
     public function create()
     {
+        // $voitures=Voiture::all();
         return view('dashboard.services.create');
+        // return view('dashboard.services.create');
     }
 
     /**
@@ -27,7 +32,13 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dossier='img_service';
+        $nom_photo=time().'service'.'.'.$request->photo->extension();
+        $request->photo->move(public_path($dossier),$nom_photo);
+        $data=$request->all();
+        $data['photo']=$dossier.'/'.$nom_photo;
+        service::create($data);
+        return redirect()->route('services.index');
     }
 
     /**
@@ -35,7 +46,9 @@ class ServicesController extends Controller
      */
     public function show(string $id)
     {
-        return view('dashboard.services.show');
+        $service=service::find($id);
+        return view('dashboard.services.show',compact('service'));
+        // return view('dashboard.services.show');
     }
 
     /**
@@ -43,7 +56,9 @@ class ServicesController extends Controller
      */
     public function edit(string $id)
     {
-        return view('dashboard.services.edit');
+        $service=service::find($id);
+        return view('dashboard.services.edit',compact('service'));
+        // return view('dashboard.services.edit');
     }
 
     /**
@@ -51,7 +66,10 @@ class ServicesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return view('dashboard.services.index');
+        $service = service::find($id);
+        $service->update($request->all());
+        return redirect()->route('services.index');
+        // return view('dashboard.services.index');
     }
 
     /**
@@ -59,6 +77,9 @@ class ServicesController extends Controller
      */
     public function destroy(string $id)
     {
-        return view('dashboard.services.index');
+        $service = service::find($id);
+        $service->delete();
+        return redirect()->route('services.index');
+        // return view('dashboard.services.index');
     }
 }

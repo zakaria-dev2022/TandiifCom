@@ -29,7 +29,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Client::create($request->all());
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -37,7 +38,9 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
-        return view('dashboard.clients.show');
+        $client = Client::find($id);
+        return view('dashboard.clients.show', compact('client'));
+        // return view('dashboard.clients.show');
     }
 
     /**
@@ -45,7 +48,9 @@ class ClientController extends Controller
      */
     public function edit(string $id)
     {
-        return view('dashboard.clients.edit');
+        $client = Client::find($id);
+        return view('dashboard.clients.edit', compact('client'));
+        // return view('dashboard.clients.edit');
     }
 
     /**
@@ -53,7 +58,10 @@ class ClientController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return view('dashboard.clients.index');
+        $client = Client::find($id);
+        $client->update($request->all());
+        return redirect()->route('clients.index');
+        // return view('dashboard.clients.index');
     }
 
     /**
@@ -61,6 +69,9 @@ class ClientController extends Controller
      */
     public function destroy(string $id)
     {
-        return view('dashboard.clients.index');
+        $client = Client::find($id);
+        $client->delete();
+        return redirect()->route('clients.index');
+        // return view('dashboard.clients.index');
     }
 }

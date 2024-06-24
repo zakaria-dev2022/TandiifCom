@@ -37,7 +37,9 @@ class CommentairesController extends Controller
      */
     public function show(string $id)
     {
-        return view('dashboard.commentaires.show');
+        $commentaire = commentaire::find($id);
+        return view('dashboard.commentaires.show', compact('commentaire'));
+        // return view('dashboard.commentaires.show');
     }
 
     /**
@@ -45,7 +47,9 @@ class CommentairesController extends Controller
      */
     public function edit(string $id)
     {
-        return view('dashboard.commentaires.edit');
+        $commentaire = commentaire::find($id);
+        return view('dashboard.commentaires.edit', compact('commentaire'));
+        // return view('dashboard.commentaires.edit');
     }
 
     /**
@@ -53,7 +57,10 @@ class CommentairesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return view('dashboard.commentaires.index');
+        $commentaire = commentaire::find($id);
+        $commentaire->update($request->all());
+        return redirect()->route('commentaires.index');
+        // return view('dashboard.commentaires.index');
     }
 
     /**
@@ -61,6 +68,9 @@ class CommentairesController extends Controller
      */
     public function destroy(string $id)
     {
-        return view('dashboard.commentaires.index');
+        $commentaire = commentaire::find($id);
+        $commentaire->delete();
+        return redirect()->route('commentaires.index');
+        // return view('dashboard.commentaire.index');
     }
 }

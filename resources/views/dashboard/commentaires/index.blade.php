@@ -3,7 +3,7 @@
     Commentaires
 @endsection
 @section('content')
-<div class="container mt-5">     
+<div class="container-fluid mt-5">     
     {{-- <a href="{{ route('tachs.create')}}" class="btn btn-success btn-lg my-3">Ajouter </a> --}}
     <table class="table text-center">
         <thead>
@@ -21,14 +21,14 @@
             <td>{{$commentaire->client->gmail}}</td>
             <td>{{$commentaire->message}}</td>
             <td>
-              <a href="" class="btn btn-sm btn-info">C</a>
-                <a href="" class="btn btn-sm btn-warning">M</a>
-                <form class="d-inline" action="" method="post">
-                @method('DELETE')
-                @csrf
-                <button  class="btn btn-sm btn-danger">S</button>
-                </form>
-            </td>
+              <a href="{{route('commentaires.show',$commentaire->id)}}" class="btn btn-sm btn-info">C</a>
+              <a href="{{route('commentaires.edit',$commentaire->id)}}" class="btn btn-sm btn-warning">M</a>
+              <form class="d-inline" action="{{route('commentaires.destroy',$commentaire->id)}}" method="post">
+              @method('DELETE')
+              @csrf
+              <button  onclick="return confirm('Voulez-vous supprimer le commentaire de {{$commentaire->client->gmail}}?');" class="btn btn-sm btn-danger">S</button>
+              </form>
+          </td>
           </tr>
           @endforeach
         </tbody>

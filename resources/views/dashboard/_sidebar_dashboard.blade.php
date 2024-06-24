@@ -18,7 +18,7 @@
             @hasSection ('logo')
                 @yield('logo')
             @else
-            <img class="im" src="../resources/img/logoCarWash.png" alt="">  
+            <img class="im" src="../resources/img/logoCarWash (2).png" alt="">  
             @endif
             <div class="liens">
                 <div class="nav-links">
