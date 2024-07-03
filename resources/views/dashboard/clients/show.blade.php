@@ -1,7 +1,10 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._coderesource')
 @section('title')
-Consulter le client "<span class="text-info"> {{$client->nom ." ". $client->prenom}} </span>"
+Consulter Client 
+@endsection
+@section('title_principale')
+    Client
 @endsection
 @section('content')
     {{-- <div class="container row d-flex justify-content-center mt-5">
@@ -16,7 +19,7 @@ Consulter le client "<span class="text-info"> {{$client->nom ." ". $client->pren
 
     </div> --}}
 
-
+    
     {{-- <div class="card-body">
         <a href="{{route('employees.index')}}" class="btn btn-secondary btn-lg my-3">Précedent </a>
         <form action="{{route('employees.store')}}" method="POST" enctype="multipart/form-data">

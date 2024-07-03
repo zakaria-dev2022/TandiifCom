@@ -2,8 +2,11 @@
 @section('title')
     Dashboard
 @endsection
+@section('title_principale')
+    Dashboard
+@endsection
 @section('logo')
-<img class="im" src="../resources/img/logoCarWash (2).png" alt="">
+<img class="im" src="../resources/img/TandiifCom.png" alt="">
 @endsection
 @section('content')
     {{-- <div class="container mt-4"> --}}
@@ -11,7 +14,7 @@
             <div class="col-md-3">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">SALES</h5>
+                        <h5 class="card-title">Voitures</h5>
                         <p class="card-text">34040</p>
                         <p class="card-text"><small>0.12% (30 days)</small></p>
                     </div>
@@ -20,7 +23,7 @@
             <div class="col-md-3">
                 <div class="card text-white bg-secondary mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">REVENUE</h5>
+                        <h5 class="card-title">Clients</h5>
                         <p class="card-text">47033</p>
                         <p class="card-text"><small>0.47% (30 days)</small></p>
                     </div>
@@ -29,7 +32,7 @@
             <div class="col-md-3">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">DOWNLOADS</h5>
+                        <h5 class="card-title">Employees</h5>
                         <p class="card-text">40016</p>
                         <p class="card-text"><small>64.00% (30 days)</small></p>
                     </div>
@@ -38,9 +41,9 @@
             <div class="col-md-3">
                 <div class="card text-white bg-danger mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">RETURNS</h5>
-                        <p class="card-text">61344</p>
-                        <p class="card-text"><small>23.00% (30 days)</small></p>
+                        <h5 class="card-title">Reclamations</h5>
+                        <p class="card-text">6</p>
+                        <p class="card-text"><small>0.04% (30 days)</small></p>
                     </div>
                 </div>
             </div>

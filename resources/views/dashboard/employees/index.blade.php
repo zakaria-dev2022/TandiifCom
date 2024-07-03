@@ -1,6 +1,9 @@
 @extends('dashboard._sidebar_dashboard')
 @section('title')
-    Employees
+    Employee
+@endsection
+@section('title_principale')
+Employee
 @endsection
 @section('content')
 <div class="container-fluid my-4">
@@ -14,7 +17,7 @@
             <th scope="col">Prenom</th>
             <th scope="col">Cin</th>
             <th scope="col">Tel</th>  
-            <th scope="col">Adresse</th> 
+            {{-- <th scope="col">Adresse</th>  --}}
             <th scope="col">Ville</th>  
             <th scope="col">Gmail</th> 
             <th scope="col">Date Naissance</th> 
@@ -34,7 +37,7 @@
             <td>{{$employee->prenom}}</td>
             <td>{{$employee->cin}}</td>
             <td>{{$employee->tel}}</td>
-            <td>{{$employee->adresse}}</td>
+            {{-- <td>{{$employee->adresse}}</td> --}}
             <td>{{$employee->ville}}</td>
             <td>{{$employee->gmail}}</td>
             <td>{{$employee->date_naissance}}</td>

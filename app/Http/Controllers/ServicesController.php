@@ -66,10 +66,18 @@ class ServicesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $service = service::find($id);
-        $service->update($request->all());
-        return redirect()->route('services.index');
+        // $service = service::find($id);
+        // $service->update($request->all());
+        // return redirect()->route('services.index');
         // return view('dashboard.services.index');
+        $service = service::find($id);
+        $dossier='img_service';
+        $nom_photo=time().'service'.'.'.$request->photo->extension();
+        $request->photo->move(public_path($dossier),$nom_photo);
+        $data=$request->all();
+        $data['photo']=$dossier.'/'.$nom_photo;
+        $service->update($data);
+        return redirect()->route('services.index');
     }
 
     /**

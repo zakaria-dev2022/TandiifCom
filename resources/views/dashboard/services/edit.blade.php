@@ -1,7 +1,10 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._codeEdit')
 @section('title')
-    Edit Services
+    Modifier Services
+@endsection
+@section('title_principale')
+Service
 @endsection
 @section('content')
 <div class="card-body">

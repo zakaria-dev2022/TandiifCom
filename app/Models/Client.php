@@ -16,7 +16,7 @@ class Client extends Model
     "cin",
     "tel",
     "adresse",
-    "Matricule_Voiture",
+    "matricule_Voiture",
     "ville",
     "gmail"];
 

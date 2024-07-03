@@ -1,7 +1,10 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._codeEdit')
 @section('title')
-    Edit Employees
+    Modifier Employee
+@endsection
+@section('title_principale')
+Employee
 @endsection
 @section('content')
 <div class="card-body">
@@ -64,15 +67,15 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="copy_cin">Copie CIN</label>
-                    <input type="file" value="{{ $employee->copy_cin }}" class="form-control-file" name="copy_cin">
+                    <input type="file" value="{{ $employee->copy_cin }}"  class="form-control-file" name="copy_cin">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="copy_permis">Copie Permis</label>
-                    <input type="file" value="{{ $employee->copy_permis }}" class="form-control-file" name="copy_permis">
+                    <input type="file"value="{{ $employee->copy_permis }}"  class="form-control-file" name="copy_permis">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="photo">Photo</label>
-                    <input type="file" value="{{ $employee->photo }}" class="form-control-file" name="photo">
+                    <label for="">Photo</label>
+                    <input type="file" value="{{ $employee->photo }}"  class="form-control-file" name="photo">
                 </div>
             </div>
         </form>

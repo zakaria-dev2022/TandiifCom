@@ -18,7 +18,7 @@
             @hasSection ('logo')
                 @yield('logo')
             @else
-            <img class="im" src="../resources/img/logoCarWash (2).png" alt="">  
+            <img class="im" src="../resources/img/TandiifCom.png" alt="">  
             @endif
             <div class="liens">
                 <div class="nav-links">
@@ -43,10 +43,10 @@
         </div>
         <div class="main-content flex-grow-1">
             <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">@yield('title')</a>
-                <form class="form-inline">
+                <span class="text-secondary ">@yield('title_principale')/<span class="text-info fw-bold ">@yield('title')</span></span> 
+                {{-- <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search now" aria-label="Search">
-                </form>
+                </form> --}}
                 <div>
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Report</button>
                 </div>

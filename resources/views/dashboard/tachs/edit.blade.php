@@ -1,5 +1,8 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._codeEdit')
 @section('title')
-    Edit Tachs
+    Edit Taches
+@endsection
+@section('title_principale')
+Tache
 @endsection

@@ -2,6 +2,9 @@
 @section('title')
     reservations
 @endsection
+@section('title_principale')
+Reservation
+@endsection
 @section('content')
 <div class="container my-4">
             

@@ -1,5 +1,8 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._codeEdit')
 @section('title')
-    Edit Reservations
+    Modifier Reservations
+@endsection
+@section('title_principale')
+Reservation
 @endsection

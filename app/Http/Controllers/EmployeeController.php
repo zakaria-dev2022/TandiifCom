@@ -74,7 +74,19 @@ class EmployeeController extends Controller
     public function update(Request $request, string $id)
     {
         $employee = employee::find($id);
-        $employee->update($request->all());
+        $dossier='img_employee';
+        // dd($request->copy_permis." ***********".$request->copy_cin."************");
+        $nom_photo=time().'personnel'.'.'.$request->photo->extension();
+        $nom_copy_permis=time().'permis'.'.'.$request->copy_permis->extension();
+        $nom_copy_cin=time().'cin'.'.'.$request->copy_cin->extension();
+        $request->photo->move(public_path($dossier),$nom_photo);
+        $request->copy_cin->move(public_path($dossier),$nom_copy_cin);
+        $request->copy_permis->move(public_path($dossier),$nom_copy_permis);
+        $data=$request->all();
+        $data['photo']=$dossier.'/'.$nom_photo;
+        $data['copy_cin']=$dossier.'/'.$nom_copy_cin;
+        $data['copy_permis']=$dossier.'/'.$nom_copy_permis;
+        $employee->update($data);
         return redirect()->route('employees.index');
         // return view('dashboard.employees.index');
     }

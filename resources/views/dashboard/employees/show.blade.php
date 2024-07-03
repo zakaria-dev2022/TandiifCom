@@ -1,33 +1,12 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._coderesource')
 @section('title')
-Consulter l'employee "<span class="text-info"> {{$employee->nom ." ". $employee->prenom}} </span>"
+Consulter Employee
 @endsection
-@section('content')
+@section('title_principale')
+Employee
+@endsection
 
-{{-- <div class="container mt-5" id="employee-info">
-    <div class="card">
-        <div class="card-header">
-            <h4>Informations sur l'employé</h4>
-        </div>
-        <div class="card-body">
-            <p>Nom:< {{ $employee['nom'] }}</p>
-            <p>Prénom:< {{ $employee['prenom'] }}</p>
-            <p>CIN:< {{ $employee['cin'] }}</p>
-            <p>Téléphone:< {{ $employee['tel'] }}</p>
-            <p>Adresse:< {{ $employee['adresse'] }}</p>
-            <p>Ville:< {{ $employee['ville'] }}</p>
-            <p>Email:< {{ $employee['gmail'] }}</p>
-            <p>Date de Naissance:< {{ $employee['date_naissance'] }}</p>
-            <p>Type de Permis:< {{ $employee['type_permis'] }}</p>
-            <p>Voiture:< {{ $employee['voiture_id'] }}</p>
-            <p>Copie CIN:< <img src="{{ $employee['copy_cin'] }}" alt="Copie CIN" style="max-width: 100px;"></p>
-            <p>Copie Permis:< <img src="{{ $employee['copy_permis'] }}" alt="Copie Permis" style="max-width: 100px;"></p>
-            <p>Photo:< <img src="{{ $employee['photo'] }}" alt="Photo de l'employé" style="position: absolute;top: 20px;left: 20px;max-width: 100px;"></p>
-        </div>
-    </div>
-</div>
-@endsection --}}
 @section('content')
 <style>
     .employee-photo {

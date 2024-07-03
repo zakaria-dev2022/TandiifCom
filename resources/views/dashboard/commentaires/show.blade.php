@@ -1,18 +1,30 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._coderesource')
+
 @section('title')
-    Consulter le commentaire de "<span class="text-info"> {{$commentaire->client->nom ." ". $commentaire->client->prenom}} </span>"
+    Consulter Commentaire
 @endsection
+
+@section('title_principale')
+    Commentaire
+@endsection
+
 @section('content')
-    <div class="container row d-flex justify-content-center mt-5">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->nom}}" type="text" name="nom">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->prenom}}" type="text" name="prenom">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->cin}}" type="text" name="cin">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->tel}}" type="text" name="tel">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->adresse}}" type="text" name="adresse">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->Matricule_Voiture}}" type="text" name="Matricule_Voiture">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->ville}}" type="text" name="ville">
-<input class="form-control col-3 col-md-4 m-3 text-center" readonly value="{{$commentaire->client->gmail}}" type="text" name="gmail">
-<textarea class="form-control" name="message" id="" cols="30" rows="2" readonly>{{$commentaire->message}}</textarea>
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header text-center d-flex align-items-center justify-content-between">
+            <h4>Informations du <span class="text-info">{{$commentaire->client->nom}} {{$commentaire->client->prenom}}</span></h4>
+            <a onclick="return confirm('Voulez-vous revenir à la page précédente ?');" href="{{ route('commentaires.index') }}" class="btn btn-secondary btn-lg my-3">Précédent</a>
+        </div>
+        <div class="card-body">
+            <p><span class="text-info fw-bold">Nom & Prenom Client </span> {{ $commentaire->client->nom }} {{$commentaire->client->prenom}}</p>
+            <p><span class="text-info fw-bold">Cin Client </span> {{ $commentaire->client->cin }}</p>
+            <p><span class="text-info fw-bold">Gmail Client </span> {{ $commentaire->client->gmail }}</p>
+            <p><span class="text-info fw-bold">Tel Client </span> {{ $commentaire->client->tel }}</p>
+            <p><span class="text-info fw-bold">Ville Client </span> {{ $commentaire->client->ville }} </p>
+            <p><span class="text-info fw-bold">Date Message </span> {{ $commentaire->client->created_at }} </p>
+            <p><span class="text-info fw-bold">Message:</span> {{ $commentaire->message }}</p>
+        </div>
     </div>
+</div>
 @endsection

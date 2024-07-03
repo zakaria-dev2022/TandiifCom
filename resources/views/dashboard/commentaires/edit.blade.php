@@ -1,7 +1,10 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._codeEdit')
 @section('title')
-Modifier le commentaire de "<span class="text-info"> {{$commentaire->client->nom ." ". $commentaire->client->prenom}} </span>"
+Modifier Commentaire 
+@endsection
+@section('title_principale')
+commentaire
 @endsection
 @section('content')
 <div class="container-fluid my-4">
@@ -38,6 +41,7 @@ Modifier le commentaire de "<span class="text-info"> {{$commentaire->client->nom
                   {{-- <td><input class="form-control" type="text" name="nom" placeholder="nom"></td> --}}
                   <td>
                     <button class="btn btn-info">Modifier</button>
+                    <a href="{{route('commentaires.index')}}" class="btn btn-danger">Annuler</a>
                       {{-- <a href="" class="btn btn-sm btn-info">C</a> --}}
                   </td>
                 </tr>

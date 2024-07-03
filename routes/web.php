@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarwashController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommentairesController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ParametreController;
 use App\Http\Controllers\ReservationsController;
@@ -20,11 +22,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('carwash');
-});
+Route::get('/',[CarwashController::class,'index'])->name('carwash.index');
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
+});
+Route::get('/Rejoignez-nous', function () {
+    return view('formulaire');
 });
 // Route::get('/dashboard.employees', function () {
 //     return view('dashboard.employees');

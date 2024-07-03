@@ -2,5 +2,5 @@
 <link rel="stylesheet" href="../../../resources/css/dash.css">
 @endsection
 @section('logo')
-<img class="im" src="../../../resources/img/logoCarWash.png" alt="">
+<img class="im" src="../../../resources/img/TandiifCom.png" alt="">
 @endsection

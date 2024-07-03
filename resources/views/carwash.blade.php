@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>RiberyAutoClean </title>
+    <title>TandiifCom </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -79,7 +79,7 @@
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary">
                 {{-- <i class="fa fa-car me-3"> --}}
-                    </i>RiberyAutoClean </h2>
+                    </i>TandiifCom </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -100,7 +100,7 @@
                 </div> -->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Rejoignez-nous<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{url('Rejoignez-nous')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Rejoignez-nous<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -116,7 +116,7 @@
                         <div class="container">
                             <div class="row align-items-center justify-content-center justify-content-lg-start">
                                 <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Ribery-Auto-Clean  //</h6>
+                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">//Tandiif.Com //</h6>
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Services de Lavage de Voiture Mobiles de Confiance</h1>
                                     <a href="#contact" class="btn btn-primary py-3 px-5 animated slideInDown">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
@@ -133,7 +133,7 @@
                         <div class="container">
                             <div class="row align-items-center justify-content-center justify-content-lg-start">
                                 <div class="col-10 col-lg-7 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Ribery-Auto-Clean  //</h6>
+                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">//Tandiif.Com //</h6>
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Lavage de Voiture Expert Livré à Votre Porte</h1>
                                     <a href="#contact" class="btn btn-primary py-3 px-5 animated slideInDown">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
@@ -215,8 +215,8 @@
                 </div>
                 <div class="col-lg-6">
                     <h6 class="text-primary text-uppercase">// à Propos //</h6>
-                    <h3 class="mb-4"><span class="text-primary">RiberyAutoClean </span> Est Le Meilleur Endroit Pour Vos Soins Automobiles</h3>
-                    <p class="mb-4">Bienvenue chez <span class="text-primary fw-bold">RiberyAutoClean </span> , votre solution de lavage de voiture à domicile de confiance. Notre équipe est passionnée par la propreté et l'entretien des véhicules, et nous sommes déterminés à offrir un service exceptionnel à nos clients. Avec <span class="text-primary fw-bold">RiberyAutoClean </span> , vous pouvez dire adieu aux longues attentes dans les files d'attente des stations de lavage et au stress des déplacements. Nous avons conçu notre application pour rendre le processus de lavage de voiture aussi simple et pratique que possible. Que vous soyez chez vous, au travail ou ailleurs, notre équipe professionnelle viendra à vous, équipée de tout le nécessaire pour laisser votre véhicule étincelant. Faites confiance à <span class="text-primary fw-bold">RiberyAutoClean </span>  pour un lavage de voiture de qualité supérieure, sans tracas ni compromis.</p>
+                    <h3 class="mb-4"><span class="text-primary">TandiifCom </span> Est Le Meilleur Endroit Pour Vos Soins Automobiles</h3>
+                    <p class="mb-4">Bienvenue chez <span class="text-primary fw-bold">TandiifCom </span> , votre solution de lavage de voiture à domicile de confiance. Notre équipe est passionnée par la propreté et l'entretien des véhicules, et nous sommes déterminés à offrir un service exceptionnel à nos clients. Avec <span class="text-primary fw-bold">TandiifCom </span> , vous pouvez dire adieu aux longues attentes dans les files d'attente des stations de lavage et au stress des déplacements. Nous avons conçu notre application pour rendre le processus de lavage de voiture aussi simple et pratique que possible. Que vous soyez chez vous, au travail ou ailleurs, notre équipe professionnelle viendra à vous, équipée de tout le nécessaire pour laisser votre véhicule étincelant. Faites confiance à <span class="text-primary fw-bold">TandiifCom </span>  pour un lavage de voiture de qualité supérieure, sans tracas ni compromis.</p>
                     <div class="row g-4 mb-3 pb-3">
                         <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
                             <div class="d-flex">
@@ -300,46 +300,53 @@
             <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-lg-4">
                     <div class="nav w-100 nav-pills me-4">
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                        @foreach ($services as $service)
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 " data-bs-toggle="pill" data-bs-target="#tab-pane-{{$service->id}}" type="button">
                             <i class="fas fa-tint fa-2x me-3"></i>
                             <!-- <i class="" style="color: #63E6BE;"></i> -->
-                            <h4 class="m-0">Lavage complet</h4>
+                            <h4 class="m-0">{{$service->type}}</h4>
                         </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
+                        @endforeach
+                        {{-- <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
                             <i class="fa fa-leaf fa-2x me-3"></i>
                             <h4 class="m-0">Lavage extérieur </h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
+                        </button> --}}
+                        {{-- <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
                             <i class="fa fa-magic fa-2x me-3"></i>
                             <h4 class="m-0">Lavage intérieur</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
+                        </button> --}}
+                        {{-- <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
                             <i class="fa fa-couch fa-2x me-3"></i>
                             <h4 class="m-0">Lavage des tapis</h4>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="tab-content w-100">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
+                        @foreach ($services as $service)
+                        <div class="tab-pane fade show " id="tab-pane-{{$service->id}}">
                             <div class="row g-4">
+                                
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="../resources/img/complet.jpg"
+                                        <img class="position-absolute img-fluid w-100 h-100" src="{{$service->photo}}"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-3">Un nettoyage en profondeur pour votre voiture</h3>
-                                    <p class="mb-4">Le lavage complet est la solution idéale pour ceux qui souhaitent redonner à leur voiture une apparence impeccable, à l'intérieur comme à l'extérieur. Ce service comprend un lavage extérieur minutieux, un nettoyage en profondeur de l'habitacle, des tapis et des sièges, ainsi qu'un soin particulier aux détails. Votre véhicule ressortira comme neuf, brillant et frais, prêt à affronter la route avec élégance</p>
+                                    <h3 class="mb-3">{{$service->type}}</h3>
+                                    <p class="mb-4">
+                                        {{$service->description}}
+                                    </p>
                                     <p><i class="fa fa-check text-success me-3"></i>Nettoyage en profondeur</p>
                                     <p><i class="fa fa-check text-success me-3"></i>Protection de la valeur</p>
                                     <p><i class="fa fa-check text-success me-3"></i>Expérience de conduite améliorée</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
+                                    <a href="#contact" class="btn btn-primary py-3 px-5 mt-3">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tab-pane-2">
+                        @endforeach
+                        {{-- <div class="tab-pane fade" id="tab-pane-2">
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
@@ -356,8 +363,8 @@
                                     <a href="" class="btn btn-primary py-3 px-5 mt-3">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-3">
+                        </div> --}}
+                        {{-- <div class="tab-pane fade" id="tab-pane-3">
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
@@ -374,8 +381,8 @@
                                     <a href="" class="btn btn-primary py-3 px-5 mt-3">Reserver<i class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-4">
+                        </div> --}}
+                        {{-- <div class="tab-pane fade" id="tab-pane-4">
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
@@ -395,11 +402,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- Service End -->
-
+ 
 
     <!-- Booking Start -->
     <div id="contact" class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -408,13 +415,13 @@
                 <div class="col-lg-6 py-5">
                     <div class="py-5">
                         <h1 class="text-white mb-4">Contactez-nous pour un Service Impeccable</h1>
-                        <p class="text-white mb-0">Vous avez des questions ou souhaitez prendre rendez-vous pour un lavage complet de votre véhicule ? N'hésitez pas à nous contacter ! Notre équipe dévouée est prête à vous assister et à répondre à toutes vos demandes. Vous pouvez nous joindre par téléphone au 0625683588, par email à RiberyAutoClean @gmail.com, ou en remplissant le formulaire de contact ci-dessous. Nous nous engageons à vous offrir un service client de qualité et à faire de votre expérience avec nous un moment agréable et sans tracas.</p>
+                        <p class="text-white mb-0">Vous avez des questions ou souhaitez prendre rendez-vous pour un lavage complet de votre véhicule ? N'hésitez pas à nous contacter ! Notre équipe dévouée est prête à vous assister et à répondre à toutes vos demandes. Vous pouvez nous joindre par téléphone au 0625683588, par email à TandiifCom @gmail.com, ou en remplissant le formulaire de contact ci-dessous. Nous nous engageons à vous offrir un service client de qualité et à faire de votre expérience avec nous un moment agréable et sans tracas.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
                         <h1 class="text-white mb-4">Contact</h1>
-                        <form action="" method="POST">
+                        <form action="{{route('clients.store')}}" method="POST">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" name="nom" class="form-control border-0" placeholder="Nom" style="height: 55px;">
@@ -453,16 +460,16 @@
                                     <input type="datetime-local" name="date" class="form-control border-0" style="height: 55px;" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" name="service" style="height: 55px;">
-                                        <option selected>Services</option>
-                                        <option value="1">complet</option>
-                                        <option value="2">exter</option>
-                                        <option value="3">inter</option>
+                                    <select class="form-select border-0" name="service_id" style="height: 55px;">
+                                        {{-- <option selected>Services</option> --}}
+                                        @foreach ($services as $service)
+                                        <option value="{{$service->id}}">{{$service->type}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <textarea class="form-control border-0" placeholder="Message" name="message"></textarea>
-                                </div>
+                                </div> --}}
                                 <div class="col-12">
                                     <button class="btn btn-dark w-100 py-3" type="submit">Envoyer</button>
                                 </div>
@@ -484,10 +491,21 @@
                 <h1 class="mb-5">Nos Team</h1>
             </div>
             <div class="row g-4">
+
+                @php
+                $limit =3;
+                $count = 0;
+            @endphp
+            
+            @foreach ($employees as $employee)
+                @if ($count > $limit)
+                    @break
+                @endif
+            
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="../resources/img/team-1.jpg" alt="">
+                            <img class="img-fluid w-100 h-100" src="{{ asset($employee->photo)}}" width="200px" height="200px" alt="">
                             <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -495,12 +513,16 @@
                             </div>
                         </div>
                         <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">zakaria Ribery</h5>
-                            <small>Assistante</small>
+                            <h4 class="fw-bold mb-0">{{ $employee->nom }} {{ $employee->prenom }}</h4>
+                            <h6 class="fw-bold mb-0">{{ $employee->gmail }} </h6>
+                            <small>{{ $employee->tel }}</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            
+                @php $count++; @endphp
+            @endforeach
+                {{-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="../resources/img/team-2.jpg" alt="">
@@ -515,8 +537,8 @@
                             <small>Assistante</small>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                </div> --}}
+                {{-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="../resources/img/team-3.jpg" alt="">
@@ -531,8 +553,8 @@
                             <small>Assistante</small>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                </div> --}}
+                {{-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="../resources/img/team-4.jpg" alt="">
@@ -547,7 +569,7 @@
                             <small>Directeur Génerale</small>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -562,38 +584,40 @@
                 <h1 class="mb-5">Nos Clients Dit!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
+                @foreach ($commentaires as $commentaire)
                 <div class="testimonial-item text-center">
                     <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="../resources/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">{{$commentaire->client->nom}} {{$commentaire->client->prenom}}</h5>
+                    <p>{{$commentaire->client->ville}}</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">{{$commentaire->message}}</p>
                     </div>
                 </div>
-                <div class="testimonial-item text-center">
+                @endforeach
+                {{-- <div class="testimonial-item text-center">
                     <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="../resources/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Client Name</h5>
                     <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                </div>
-                <div class="testimonial-item text-center">
+                </div> --}}
+                {{-- <div class="testimonial-item text-center">
                     <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="../resources/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Client Name</h5>
                     <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                </div>
-                <div class="testimonial-item text-center">
+                </div> --}}
+                {{-- <div class="testimonial-item text-center">
                     <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="../resources/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Client Name</h5>
                     <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -690,11 +714,10 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Diagnostic Test</a>
-                    <a class="btn btn-link" href="">Engine Servicing</a>
-                    <a class="btn btn-link" href="">Tires Replacement</a>
-                    <a class="btn btn-link" href="">Oil Changing</a>
-                    <a class="btn btn-link" href="">Vacuam Cleaning</a>
+                    @foreach ($services as $service)
+                        
+                    <a class="btn btn-link" href="">{{$service->type}}</a>
+                    @endforeach
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
@@ -710,17 +733,17 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">RiberyAutoClean </a>
+                        &copy; <a class="border-bottom" href="#">TandiifCom </a>
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         Designed By <a class="border-bottom" href="">Zakaria Rebibi</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="">Accueil</a>
+                            <a href="">À Propos</a>
+                            <a href="">Services</a>
+                            <a href="">Contact</a>
                         </div>
                     </div>
                 </div>

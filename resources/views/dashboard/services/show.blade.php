@@ -1,7 +1,10 @@
 @extends('dashboard._sidebar_dashboard')
 @extends('dashboard._coderesource')
 @section('title')
-Consulter le service "<span class="text-info"> {{$service->type}} </span>"
+Consulter Service 
+@endsection
+@section('title_principale')
+Service
 @endsection
 @section('content')
 <style>

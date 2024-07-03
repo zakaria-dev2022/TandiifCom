@@ -3,6 +3,9 @@
 @section('title')
     Ajouter Employee
 @endsection
+@section('title_principale')
+Employee
+@endsection
 @section('content')
 <div class="card-body">
   <form action="{{route('employees.store')}}" method="POST" enctype="multipart/form-data">
@@ -52,7 +55,6 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="type_permis">Type de Permis</label>
-                    {{-- <input type="text" class="form-control" name="type_permis" placeholder="Type de Permis"> --}}
                     <select name="type_permis" id="" class="form-control">
                       <option selected value="">Choisir type de permis </option>
                       <option  value="B">B</option>
@@ -60,16 +62,6 @@
                       <option  value="BE">BE</option>
                     </select>
                 </div>
-                {{-- <div class="form-group col-md-6">
-                    <label for="voiture_id">Voiture</label>
-                    <select name="voiture_id" id="" class="form-control">
-                      <option selected value="">Choisir la voiture donner au client</option>
-                      @foreach($voitures as $voiture)
-                      <option value="{{$voiture->id}}">{{$voiture->marque}} {{$voiture->modele}}</option>
-                      @endforeach
-                    </select>
-                    {{-- <input type="text" class="form-control" id="voiture_id" placeholder="Voiture ID"> --}
-                </div> --}}
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">

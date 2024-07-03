@@ -2,6 +2,9 @@
 @section('title')
     Services
 @endsection
+@section('title_principale')
+Service
+@endsection
 @section('content')
 <div class="container-fluid my-4">
             
