@@ -3,7 +3,7 @@ body {
   background-color: #f4f5f7;
 }
 .sidebar {
-  height:auto;
+  height:auto !important;
   background-color: #c9c919 !important;
   color: white;
   /* padding: 30px; */

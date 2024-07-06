@@ -35,6 +35,19 @@
 </head>
 
 <body>
+    
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+        {{-- </div> --}}
     <!-- Spinner Start -->
     {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -100,7 +113,7 @@
                 </div> -->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="{{url('Rejoignez-nous')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Rejoignez-nous<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{route('Rejoignez-nous.create')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Rejoignez-nous<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -208,7 +221,7 @@
                     <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
                         <img class="position-absolute img-fluid w-100 h-100" src="../resources/img/back.jpg" style="object-fit: cover;" alt="">
                         <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .08);">
-                            <h1 class="display-4 text-white mb-0">15 <span class="fs-4">Years</span></h1>
+                            <h1 class="display-4 text-white mb-0">12<span class="fs-4">Years</span></h1>
                             <h4 class="text-white">Experience</h4>
                         </div>
                     </div>
@@ -266,7 +279,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-check fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">12</h2>
                     <p class="text-white mb-0">Years Experience</p>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
@@ -276,12 +289,12 @@
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">98</h2>
                     <p class="text-white mb-0">Satisfied Clients</p>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-car fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">100</h2>
                     <p class="text-white mb-0">Compleate Projects</p>
                 </div>
             </div>
@@ -421,7 +434,8 @@
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
                         <h1 class="text-white mb-4">Contact</h1>
-                        <form action="{{route('clients.store')}}" method="POST">
+                        <form action="{{route('reservations.store')}}" method="POST">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" name="nom" class="form-control border-0" placeholder="Nom" style="height: 55px;">
@@ -439,25 +453,26 @@
                                     <input type="text" name="adresse" class="form-control border-0" placeholder="Adresse" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" name="matricule" class="form-control border-0" placeholder="Matricule Voiture" style="height: 55px;">
+                                    <input type="text" name="matricule_Voiture" class="form-control border-0" placeholder="Matricule Voiture" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" name="ville" style="height: 55px;">
                                         <option selected>Ville</option>
-                                        <option value="1">casa</option>
-                                        <option value="2">kesh</option>
-                                        <option value="3">agadir</option>
-                                        <option value="3">rabat</option>
+                                        <option value="casa">casa</option>
+                                        <option value="kesh">kesh</option>
+                                        <option value="agadir">agadir</option>
+                                        <option value="rabat">rabat</option>
                                     </select>
                                 </div>
+                                
                                 <!-- <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control border-0" placeholder="Ville" style="height: 55px;">
                                 </div> -->
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" name="email" placeholder="Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" name="gmail" placeholder="Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="datetime-local" name="date" class="form-control border-0" style="height: 55px;" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <input type="datetime-local" name="date_reservation" class="form-control border-0" style="height: 55px;" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" name="service_id" style="height: 55px;">
@@ -636,46 +651,14 @@
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
                         <h1 class="text-white mb-4">Commentaire</h1>
-                        <form>
+                        <form action="{{route('commentaires.store')}}" method="POST">
+                            @csrf
                             <div class="row g-3">
-                                {{-- <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="nom" style="height: 55px;">
-                                </div> --}}
-                                {{-- <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="nom" style="height: 55px;">
-                                </div> --}}
-                                {{-- <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="nom" style="height: 55px;">
-                                </div> --}}
-                                {{-- <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="nom" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="nom" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="nom" style="height: 55px;">
-                                </div> --}}
                                 <div class="col-12 ">
-                                    <input type="email" readonly class="form-control border-0" placeholder="Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" name="gmail" placeholder="Email" style="height: 55px;">
                                 </div>
-                                {{-- <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Type De Commentaire</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div> --}}
-                                {{-- <div class="col-12 col-sm-6">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div> --}}
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Message"></textarea>
+                                    <textarea class="form-control border-0" name="message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-dark w-100 py-3" type="submit">Envoyer</button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\commentaire;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class CommentairesController extends Controller
      */
     public function create()
     {
-        return view('dashboard.commentaires.create');
+        // return view('dashboard.commentaires.create');
     }
 
     /**
@@ -29,7 +30,29 @@ class CommentairesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation des données d'entrée
+        // $validatedData = $request->validate([
+        //         'email' => 'required|email',
+        //         'message' => 'required|string',
+        //     ]);
+            
+            // Rechercher le client par email
+            $client = Client::where('gmail', $request['gmail'])->first();
+            // print_r($client);
+            // exit();
+
+        if (!$client) {
+            // Si le client n'est pas trouvé, afficher un message d'erreur
+            // return redirect()->back()->with('error', "Tu n'es pas un client");
+            return redirect()->back()->with('error', "Désoler!Tu n'es pas un client");
+
+        }
+
+        // Si le client est trouvé, créer le commentaire
+        Commentaire::create(['client_id' => $client->id,'message' => $request['message']]);
+        $message = 'Merci pour votre commentaire, ' . $client->prenom . ' ' . $client->nom . '!';
+        return redirect('/')->with('success', $message);
+    
     }
 
     /**

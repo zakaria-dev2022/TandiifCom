@@ -27,6 +27,7 @@
                     <a href="{{url('clients')}}" class="clients">Clients</a>
                     <a href="{{url('reservations')}}" class="reservations">Reservations</a>
                     <a href="{{url('tachs')}}" class="tasks">Taches</a>
+                    <a href="{{url('demandes')}}" class="clients">Demandes</a>
                     <a href="{{url('services')}}" class="services">Services</a>
                     <a href="{{url('commentaires')}}" class="commentaire">Commentaire</a>
                     <a href="{{url('parametre')}}" class="parametre">Paramétre</a>
@@ -48,7 +49,7 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search now" aria-label="Search">
                 </form> --}}
                 <div>
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Report</button>
+                    {{-- <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Report</button> --}}
                 </div>
             </nav>        
                 @yield('content')

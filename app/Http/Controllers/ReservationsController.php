@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\reservation;
+use App\Models\service;
 use Illuminate\Http\Request;
 
 class ReservationsController extends Controller
@@ -11,7 +14,8 @@ class ReservationsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.reservations.index');
+        $reservations = reservation::all();
+        return view('dashboard.reservations.index', compact('reservations'));
     }
 
     /**
@@ -19,7 +23,8 @@ class ReservationsController extends Controller
      */
     public function create()
     {
-        return view('dashboard.reservations.create');
+        $services = service::all();
+        return view('dashboard.reservations.create', compact('services'));
     }
 
     /**
@@ -27,8 +32,60 @@ class ReservationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = Client::where('gmail', $request['gmail'])->first();
+
+        // print_r();
+        // exit();
+
+        if (!$client) {
+            Client::create([
+                'nom' => $request['nom'],
+                'prenom' => $request['prenom'],
+                'cin' => $request['cin'],
+                'tel' => $request['tel'],
+                'adresse' => $request['adresse'],
+                'matricule_Voiture' => $request['matricule_Voiture'],
+                'ville' => $request['ville'],
+                'gmail' => $request['gmail']]);
+                
+                reservation::create([
+                    'nom' => $request['nom'],
+                    'prenom' => $request['prenom'],
+                    'cin' => $request['cin'],
+                    'tel' => $request['tel'],
+                    'adresse' => $request['adresse'],
+                    'matricule_voiture' => $request['matricule_Voiture'],
+                    'ville' => $request['ville'],
+                    'gmail' => $request['gmail'],
+                    'service_id' => $request['service_id'],
+                    'date_reservation' => $request['date_reservation'],
+                ]);
+                $message = 'Réservation Effectuer,Bienvenue Chez Nous ' .  $request['prenom'] . ' ' .  $request['nom'] ;
+                
+            return redirect('/')->with('success', $message);
+        }
+
+        // Création de la réservation
+        Reservation::create([
+            'nom' => $request['nom'],
+            'prenom' => $request['prenom'],
+            'cin' => $request['cin'],
+            'tel' => $request['tel'],
+            'adresse' => $request['adresse'],
+            'matricule_voiture' => $request['matricule_Voiture'],
+            'ville' => $request['ville'],
+            'gmail' => $request['gmail'],
+            'service_id' => $request['service_id'],
+            'date_reservation' => $request['date_reservation'],
+        ]);
+        // if (request()->is('reservations')) {
+        //     return redirect('/reservations');
+        // } else {
+        //     return redirect('/')->with('success', 'Réservation Effectuer,Merci pour votre réservation!');
+        // }
+        return redirect('/')->with('success', 'Réservation Effectuer,Merci pour votre réservation!');
     }
+    
 
     /**
      * Display the specified resource.

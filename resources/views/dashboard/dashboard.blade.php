@@ -14,8 +14,8 @@
             <div class="col-md-3">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Voitures</h5>
-                        <p class="card-text">34040</p>
+                        <h5 class="card-title">Demande Emploie</h5>
+                        <p class="card-text">{{$demandes}}</p>
                         <p class="card-text"><small>0.12% (30 days)</small></p>
                     </div>
                 </div>
@@ -24,25 +24,25 @@
                 <div class="card text-white bg-secondary mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Clients</h5>
-                        <p class="card-text">47033</p>
+                        <p class="card-text">{{$clients}}</p>
                         <p class="card-text"><small>0.47% (30 days)</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Employees</h5>
+                        <p class="card-text">{{$employees}}</p>
+                        <p class="card-text"><small>64.00% (30 days)</small></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Employees</h5>
-                        <p class="card-text">40016</p>
-                        <p class="card-text"><small>64.00% (30 days)</small></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-danger mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Reclamations</h5>
-                        <p class="card-text">6</p>
+                        <h5 class="card-title">Reservation</h5>
+                        <p class="card-text">{{$reservations}}</p>
                         <p class="card-text"><small>0.04% (30 days)</small></p>
                     </div>
                 </div>

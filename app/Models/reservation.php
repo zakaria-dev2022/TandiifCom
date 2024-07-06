@@ -11,7 +11,14 @@ class reservation extends Model
 {
     use HasFactory;
     protected $fillable=[
-    'client_id',
+    "nom",
+    "prenom",
+    "cin",
+    "tel",
+    "adresse",
+    "matricule_voiture",
+    "ville",
+    "gmail",
     'service_id',
     'date_reservation'];
 
